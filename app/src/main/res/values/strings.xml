@@ -3,4 +3,20 @@
     <string name="newGameLbl">Neues Spiel</string>
     <string name="homeTeamLbl">Heimteam</string>
     <string name="guestTeamLbl">Gäste</string>
+    <string name="kickoffLbl">Kick Off</string>
+    <string name="endOfGameLbl">End of Game</string>
+    <string name="end1stQtrLbl">End of 1st</string>
+    <string name="endOf2ndQtrLbl">End of 2nd</string>
+    <string name="firstDownLbl">1st Down</string>
+    <string name="endOf3rdQtrLbl">End of 3rd</string>
+    <string name="touchDownLbl">Touchdown</string>
+    <string name="patLbl">PAT</string>
+    <string name="twoPtConvLbl">2PtConv</string>
+    <string name="safetyLbl">Safety</string>
+    <string name="sendBtnLbl">Senden</string>
+    <string name="hashTagLbl">HashTag</string>
+    <string name="SHARED_PREFS_FILE">FOOTBALL_TEAM_NAMES</string>
+    <string name="PREFS_HOME_NAME">HOME_NAME</string>
+    <string name="PREFS_GUEST_NAME">GUEST_NAME</string>
+    <string name="PREFS_HASHTAG">HASH_TAG</string>
 </resources>
