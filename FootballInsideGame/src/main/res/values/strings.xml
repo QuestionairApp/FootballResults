@@ -19,4 +19,7 @@
     <string name="PREFS_HOME_NAME">HOME_NAME</string>
     <string name="PREFS_GUEST_NAME">GUEST_NAME</string>
     <string name="PREFS_HASHTAG">HASH_TAG</string>
+    <string name="PREFS_HOME_RESULT">HOME_RESULT</string>
+    <string name="PREFS_GUEST_RESULT">GUEST_RESULT</string>
+    <string name="homevsguestlbl">Home vs. Guest</string>
 </resources>

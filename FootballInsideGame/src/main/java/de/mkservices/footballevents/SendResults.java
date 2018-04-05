@@ -15,6 +15,7 @@ public class SendResults extends AppCompatActivity {
     private String guestTeam;
     private String hashTag;
     private Context ctx;
+    private int tmpResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,9 @@ public class SendResults extends AppCompatActivity {
         homeTeam=prefs.getString(getString(R.string.PREFS_HOME_NAME),"Heim");
         guestTeam=prefs.getString(getString(R.string.PREFS_GUEST_NAME), "Gast");
         hashTag=prefs.getString(getString(R.string.PREFS_HASHTAG), "#heimvsgast");
-
+        int homeResult=prefs.getInt(getString(R.string.PREFS_HOME_RESULT), 0);
+        int guestResult=prefs.getInt(getString(R.string.PREFS_GUEST_RESULT), 0);
+        setResultFields(homeResult, guestResult);
         //set button labels
         homeBtn.setText(homeTeam);
         guestBtn.setText(guestTeam);
@@ -51,7 +54,10 @@ public class SendResults extends AppCompatActivity {
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tweet=homeTeam+" vs. "+guestTeam+": "+getTweetText()+" "+hashTag;
+                SharedPreferences prefs=ctx.getSharedPreferences(getString(R.string.SHARED_PREFS_FILE), Context.MODE_PRIVATE);
+                int homeResult=prefs.getInt(getString(R.string.PREFS_HOME_RESULT),0);
+                int guestResult=prefs.getInt(getString(R.string.PREFS_GUEST_RESULT), 0);
+                String tweet=homeTeam+" " + String.valueOf(homeResult)+" vs. "+guestTeam+" "+String.valueOf(guestResult)+" : "+getTweetText()+" "+hashTag;
                 setTweetText("");
                 Intent intent=new Intent();
                 intent.setAction(Intent.ACTION_SEND);
@@ -67,6 +73,7 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet=" "+"Safety!!!";
                 setTweetText(tweet);
+                tmpResult=2;
             }
         });
 
@@ -76,6 +83,7 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet+=" "+"2Pt. conversion good";
                 setTweetText(tweet);
+                tmpResult=2;
             }
         });
 
@@ -85,6 +93,7 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet+=" "+"PAT good";
                 setTweetText(tweet);
+                tmpResult=1;
             }
         });
 
@@ -94,6 +103,7 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet+=" "+"Touchdown!!!";
                 setTweetText(tweet);
+                tmpResult=6;
             }
         });
 
@@ -157,6 +167,14 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet+=" "+guestTeam;
                 setTweetText(tweet);
+                SharedPreferences prefs=ctx.getSharedPreferences(getString(R.string.SHARED_PREFS_FILE), Context.MODE_PRIVATE);
+                int homeResult=prefs.getInt(getString(R.string.PREFS_HOME_RESULT), 0);
+                int guestResult=prefs.getInt(getString(R.string.PREFS_GUEST_RESULT), 0);
+                guestResult+=tmpResult;
+                SharedPreferences.Editor editor=prefs.edit();
+                editor.putInt(getString(R.string.PREFS_GUEST_RESULT), guestResult);
+                editor.apply();
+                setResultFields(homeResult, guestResult);
             }
         });
 
@@ -166,6 +184,14 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet +=" "+homeTeam;
                 setTweetText(tweet);
+                SharedPreferences prefs=ctx.getSharedPreferences(getString(R.string.SHARED_PREFS_FILE), Context.MODE_PRIVATE);
+                int homeResult=prefs.getInt(getString(R.string.PREFS_HOME_RESULT), 0);
+                int guestResult=prefs.getInt(getString(R.string.PREFS_GUEST_RESULT), 0);
+                homeResult+=tmpResult;
+                SharedPreferences.Editor editor=prefs.edit();
+                editor.putInt(getString(R.string.PREFS_HOME_RESULT), homeResult);
+                editor.apply();
+                setResultFields(homeResult, guestResult);
             }
         });
     }
@@ -179,5 +205,12 @@ public class SendResults extends AppCompatActivity {
     protected void setTweetText(String tweet){
         EditText editText=(EditText)findViewById(R.id.editTweet);
         editText.setText(tweet);
+    }
+
+    private void setResultFields(int home, int guest){
+        EditText homeResultEdit=(EditText)findViewById(R.id.editHomeRes);
+        EditText guestResultEdit=(EditText)findViewById(R.id.editGuestRes);
+        homeResultEdit.setText(String.valueOf(home));
+        guestResultEdit.setText(String.valueOf(guest));
     }
 }

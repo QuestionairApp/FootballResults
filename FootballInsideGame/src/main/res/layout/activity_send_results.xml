@@ -153,11 +153,10 @@
         android:id="@+id/homeTeamBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/guestTeamBtn"
+        app:layout_constraintEnd_toStartOf="@+id/editHomeRes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
 
@@ -166,11 +165,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editGuestRes"
+        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+
+    <EditText
+        android:id="@+id/editHomeRes"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/editGuestRes"
         app:layout_constraintStart_toEndOf="@+id/homeTeamBtn"
+        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+
+    <EditText
+        android:id="@+id/editGuestRes"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/guestTeamBtn"
+        app:layout_constraintStart_toEndOf="@+id/editHomeRes"
         app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
 
 </android.support.constraint.ConstraintLayout>
