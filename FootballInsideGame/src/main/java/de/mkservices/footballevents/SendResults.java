@@ -171,6 +171,7 @@ public class SendResults extends AppCompatActivity {
                 int homeResult=prefs.getInt(getString(R.string.PREFS_HOME_RESULT), 0);
                 int guestResult=prefs.getInt(getString(R.string.PREFS_GUEST_RESULT), 0);
                 guestResult+=tmpResult;
+                tmpResult=0;
                 SharedPreferences.Editor editor=prefs.edit();
                 editor.putInt(getString(R.string.PREFS_GUEST_RESULT), guestResult);
                 editor.apply();
@@ -188,6 +189,7 @@ public class SendResults extends AppCompatActivity {
                 int homeResult=prefs.getInt(getString(R.string.PREFS_HOME_RESULT), 0);
                 int guestResult=prefs.getInt(getString(R.string.PREFS_GUEST_RESULT), 0);
                 homeResult+=tmpResult;
+                tmpResult=0;
                 SharedPreferences.Editor editor=prefs.edit();
                 editor.putInt(getString(R.string.PREFS_HOME_RESULT), homeResult);
                 editor.apply();
