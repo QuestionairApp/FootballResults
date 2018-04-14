@@ -127,7 +127,7 @@
     <EditText
         android:id="@+id/editTweet"
         android:layout_width="215dp"
-        android:layout_height="108dp"
+        android:layout_height="73dp"
         android:layout_marginBottom="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -158,7 +158,7 @@
         android:text="Button"
         app:layout_constraintEnd_toStartOf="@+id/editHomeRes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+        app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
 
     <Button
         android:id="@+id/guestTeamBtn"
@@ -169,7 +169,7 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editGuestRes"
-        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+        app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
 
     <EditText
         android:id="@+id/editHomeRes"
@@ -181,7 +181,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/editGuestRes"
         app:layout_constraintStart_toEndOf="@+id/homeTeamBtn"
-        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+        app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
 
     <EditText
         android:id="@+id/editGuestRes"
@@ -193,6 +193,42 @@
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/guestTeamBtn"
         app:layout_constraintStart_toEndOf="@+id/editHomeRes"
+        app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
+
+    <Button
+        android:id="@+id/fiveydBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/fiveYdPtyLbl"
+        app:layout_constraintEnd_toStartOf="@+id/tenYardBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+
+    <Button
+        android:id="@+id/tenYardBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tenYdPtyLbl"
+        app:layout_constraintEnd_toStartOf="@+id/editGuestRes"
+        app:layout_constraintStart_toEndOf="@+id/editHomeRes"
+        app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+
+    <Button
+        android:id="@+id/fifteenYardBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/fifteenYrdPtyLbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tenYardBtn"
         app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
 
 </android.support.constraint.ConstraintLayout>

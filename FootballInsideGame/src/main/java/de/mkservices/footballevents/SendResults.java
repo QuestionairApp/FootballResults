@@ -37,6 +37,9 @@ public class SendResults extends AppCompatActivity {
         Button twoPtBtn=(Button)findViewById(R.id.twoptconfbtn);
         Button safetyBtn=(Button)findViewById(R.id.safetybtn);
         Button sendBtn=(Button)findViewById(R.id.sendBtn);
+        Button fiveydBtn=(Button)findViewById(R.id.fiveydBtn);
+        Button tenydBtn=(Button)findViewById(R.id.tenYardBtn);
+        Button fifteenydBtn=(Button)findViewById(R.id.fifteenYardBtn);
         //get shared preferences and team names and hashtag
         SharedPreferences prefs=this.getSharedPreferences(getString(R.string.SHARED_PREFS_FILE), Context.MODE_PRIVATE);
         homeTeam=prefs.getString(getString(R.string.PREFS_HOME_NAME),"Heim");
@@ -67,11 +70,38 @@ public class SendResults extends AppCompatActivity {
             }
         });
 
+        fifteenydBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tweet=getTweetText();
+                tweet+=" "+"15 yd. penalty";
+                setTweetText(tweet);
+            }
+        });
+
+        tenydBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tweet=getTweetText();
+                tweet+=" "+"10 yd. penalty";
+                setTweetText(tweet);
+            }
+        });
+
+        fiveydBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tweet=getTweetText();
+                tweet+=" "+"5 yd. penalty";
+                setTweetText(tweet);
+            }
+        });
+
         safetyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String tweet=getTweetText();
-                tweet=" "+"Safety!!!";
+                tweet+=" "+"Safety!!!";
                 setTweetText(tweet);
                 tmpResult=2;
             }
