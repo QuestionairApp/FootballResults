@@ -121,7 +121,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/safetyLbl"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fieldGoalBtn"
         app:layout_constraintTop_toBottomOf="@+id/patbtn" />
 
     <EditText
@@ -230,5 +230,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tenYardBtn"
         app:layout_constraintTop_toBottomOf="@+id/safetybtn" />
+
+    <Button
+        android:id="@+id/fieldGoalBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/fieldGoalLbl"
+        app:layout_constraintEnd_toStartOf="@+id/safetybtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patbtn" />
 
 </android.support.constraint.ConstraintLayout>

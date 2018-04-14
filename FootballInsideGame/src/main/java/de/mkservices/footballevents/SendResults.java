@@ -40,6 +40,7 @@ public class SendResults extends AppCompatActivity {
         Button fiveydBtn=(Button)findViewById(R.id.fiveydBtn);
         Button tenydBtn=(Button)findViewById(R.id.tenYardBtn);
         Button fifteenydBtn=(Button)findViewById(R.id.fifteenYardBtn);
+        Button fieldGoalBtn=(Button)findViewById(R.id.fieldGoalBtn);
         //get shared preferences and team names and hashtag
         SharedPreferences prefs=this.getSharedPreferences(getString(R.string.SHARED_PREFS_FILE), Context.MODE_PRIVATE);
         homeTeam=prefs.getString(getString(R.string.PREFS_HOME_NAME),"Heim");
@@ -94,6 +95,16 @@ public class SendResults extends AppCompatActivity {
                 String tweet=getTweetText();
                 tweet+=" "+"5 yd. penalty";
                 setTweetText(tweet);
+            }
+        });
+
+        fieldGoalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tweet=getTweetText();
+                tweet+=" "+"Field Goal!";
+                setTweetText(tweet);
+                tmpResult=3;
             }
         });
 

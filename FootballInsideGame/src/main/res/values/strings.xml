@@ -25,4 +25,5 @@
     <string name="fiveYdPtyLbl">5 yrds.</string>
     <string name="tenYdPtyLbl">10 yrds.</string>
     <string name="fifteenYrdPtyLbl">15 yrds.</string>
+    <string name="fieldGoalLbl">Fieldgoal</string>
 </resources>
