@@ -127,16 +127,15 @@
     <EditText
         android:id="@+id/editTweet"
         android:layout_width="215dp"
-        android:layout_height="73dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textMultiLine|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sendBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeTeamBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/editHomeRes" />
 
     <Button
         android:id="@+id/sendBtn"
@@ -153,10 +152,11 @@
         android:id="@+id/homeTeamBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/editHomeRes"
+        app:layout_constraintEnd_toStartOf="@+id/guestTeamBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
 
@@ -165,35 +165,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editGuestRes"
+        app:layout_constraintStart_toEndOf="@+id/homeTeamBtn"
         app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
 
     <EditText
         android:id="@+id/editHomeRes"
         android:layout_width="48dp"
         android:layout_height="44dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/editGuestRes"
-        app:layout_constraintStart_toEndOf="@+id/homeTeamBtn"
-        app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeTeamBtn" />
 
     <EditText
         android:id="@+id/editGuestRes"
         android:layout_width="48dp"
         android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/guestTeamBtn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editHomeRes"
-        app:layout_constraintTop_toBottomOf="@+id/fiveydBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/guestTeamBtn" />
 
     <Button
         android:id="@+id/fiveydBtn"
